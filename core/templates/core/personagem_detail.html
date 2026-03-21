@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Personagem</title>
+    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+</head>
+<body>
+    {% include 'core/components/nav.html' %}
+    <div class="main-details">
+        <h1 class="title-detail">Detalhes do Personagem</h1>
+        <div class="box-info">
+            <div class="box-image">
+                <img class="personagem-image" src="{{ personagem.image }}" alt="{{ personagem.name }}">
+            </div>
+            <div class="data">
+                <p>Name: {{ personagem.name }}</p>
+                <p>House: {{ personagem.house }}</p>
+                <p>Patronus: {{ personagem.patronus }}</p>
+                <p>dateOfBirth: {{ personagem.dateOfBirth }}</p>
+                <p>ancestry: {{ personagem.ancestry }}</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
