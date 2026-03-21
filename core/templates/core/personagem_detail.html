@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Detalhes do Personagem</title>
-    <link rel="stylesheet" href="{% static 'core/css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'core/css/homedetail.css' %}">
 </head>
 <body>
     {% include 'core/components/nav.html' %}
@@ -13,7 +13,7 @@
         <h1 class="title-detail">Detalhes do Personagem</h1>
         <div class="box-info">
             <div class="box-image">
-                <img class="personagem-image" src="{{ personagem.image }}" alt="{{ personagem.name }}">
+                <img class="personagem-image" src="{{ personagem.image }}" alt="{{ personagem.name }}" width="300" height="450">
             </div>
             <div class="data">
                 <p>Name: {{ personagem.name }}</p>

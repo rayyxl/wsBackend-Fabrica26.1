@@ -1,0 +1,131 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: #130d50;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+nav {
+    height: 10vh;
+    background-color: #710c0c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+.box-opinions {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    width: 60vw;
+    background-color: #ffffff;
+    border: 4px solid #ffee05;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    border-radius: 10px;
+    padding: 2vh 2vw;
+}
+
+.box-opinions h2 {
+    font-size: 2vw;
+    color: #130d50;
+}
+
+.box-opinions ul {
+    list-style-type: none;
+    overflow: auto;
+    width: 100%;
+    height: 30vh;
+    background-color: #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.box-opinions ul li {
+    padding: 10px;
+    font-size: 1.2vw;
+    color: #130d50;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    justify-content: space-between;
+}
+
+p {
+    color: #fff;
+    font-size: 1.5vw;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.box-opinions ul li p {
+    margin: 0;
+}
+
+.box-opinions ul li a {
+    color: #10b6e9;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    transition: color 0.3s ease;
+}
+
+.box-opinions ul li a:hover {
+    color: #0a7c9e;
+}
+
+.div-table {
+    max-height: 35vh;
+    width: 100%;
+    max-width: 100%;
+    overflow-y: auto;
+    overflow-x: hidden;
+    border: 1px solid #ccc;
+}
+
+table {
+    width: 100%;           
+    border-collapse: collapse;
+}
+
+thead th {
+    position: sticky;
+    top: 0;
+    background-color: #1a1a2e;
+    z-index: 1;
+}
+
+th, td {
+    padding: 1vh 1vw;
+    border: 1px solid #ccc;
+    text-align: center;
+}
+
+td a {
+    color: #10b6e9;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+    margin: 0 .2vw;
+    transition: color 0.3s ease;
+}
+
+td a:hover {
+    color: #a0bec7;
+}

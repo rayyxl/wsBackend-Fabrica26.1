@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listar Opiniões</title>
+    <link rel="stylesheet" href="{% static 'core/css/list_opinions.css' %}">
+</head>
+<body>
+    {% include 'core/components/nav.html' %}
+
+    <div class="box-opinions">
+            <div class="opinios-info-sup">
+                <h2>Opiniões sobre os personagens</h2>
+            </div>
+            <div class="div-table">
+                <table border="2">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Opinião</th>
+                            <th colspan="2">Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for opinion in opinions %}
+                        <tr>
+                            <td>{{ opinion.nome }}</td>
+                            <td>{{ opinion.opiniao }}</td>
+                            <td>
+                                <a href="{% url 'edit_opinion' opinion.nome %}">Editar</a>
+                                <a href="{% url 'delete_opinion' opinion.nome %}">Excluir</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <a href="{% url 'create_opinion' %}">Criar Opinião</a>
+                <a href="{% url 'home' %}">Voltar para a página inicial</a>
+            </div>
+        </div>
+</body>
+</html>

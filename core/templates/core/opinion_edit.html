@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Opinião</title>
+    <link rel="stylesheet" href="{% static 'core/css/opinion_edit.css' %}">
+</head>
+<body>
+    {% include 'core/components/nav.html' %}
+
+    <div class="main-editar">
+        <h1>Descorra sua Opinião</h1>
+        <form method="post" class="form-edit">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Salvar Opinião">
+        </form>
+    </div>
+</body>
+</html>
