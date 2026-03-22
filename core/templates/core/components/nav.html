@@ -1,5 +1,11 @@
 {% load static %}
 <nav>
-    <img src="{% static 'core/img/raio.png' %}" alt="Raio" width="50" height="50">
-    <p>PatronRate</p>
+    <div class="left">
+        <img src="{% static 'core/img/raio.png' %}" alt="Raio" width="50" height="50">
+        <p>PatronRate</p>
+    </div>
+    <div class="right">
+        <a href="{% url 'home' %}">Home</a>
+        <a href="{% url 'list_opinions' %}">Opiniões</a>
+    </div>
 </nav>

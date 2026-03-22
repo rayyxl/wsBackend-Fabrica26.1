@@ -44,14 +44,22 @@ class OpinionEditView(View):
         opinioes = Opinion.objects.all()
         personagem = Opinion.objects.filter(nome=nome).first()
         form = OpinionForm(instance=personagem)
-        return render(request, 'core/opinion_edit.html', {'form': form, 'personagem': personagem, 'opinions': opinioes})
+        return render(request, 'core/opinion_edit.html', {'form': form, 
+                                                          'personagem': personagem, 
+                                                          'opinions': opinioes})
         
     def post(self, request, nome):
         form = OpinionForm(request.POST, instance=Opinion.objects.filter(nome=nome).first())
         if form.is_valid():
             form.save()
-        return render(request, 'core/list_opinions.html', {'form': OpinionForm(), 'personagem': buscar_personagem_por_nome(nome), 'opinions': Opinion.objects.all()})
-    
+            return redirect('list_opinions')
+        else:
+
+            return render(request, 'core/opinion_edit.html', {
+                'form': form, 
+                'personagem': buscar_personagem_por_nome(nome),
+                'opinions': Opinion.objects.all()
+            })    
     
 class OpinionDeleteView(View):
     def get(self, request, nome):
@@ -59,7 +67,10 @@ class OpinionDeleteView(View):
         if opinion:
             opinion.delete()
             messages.success(request, f'Opinião sobre {nome} deletada com sucesso!')
-        return render(request, 'core/list_opinions.html', {'form': OpinionForm(), 'personagem': buscar_personagem_por_nome(nome), 'opinions': Opinion.objects.all()})
+        return render(request, 'core/list_opinions.html', {
+            'form': OpinionForm(), 
+            'personagem': buscar_personagem_por_nome(nome), 
+            'opinions': Opinion.objects.all()})
     
 class OpinionManageView(View):
     def get(self, request):

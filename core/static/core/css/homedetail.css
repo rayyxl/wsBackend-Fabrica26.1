@@ -14,12 +14,38 @@ body {
 
 nav {
     height: 10vh;
+    width: 100%;
     background-color: #710c0c;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-around;
     gap: 20px;
     padding: 0 20px;
+}
+
+nav div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1vh 1vw;
+}
+
+nav .right {
+    gap: 0 2vw;
+}
+
+nav .right a {
+    text-decoration: none;
+    color: #fff;
+    font-size: 1.2vw;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+nav .right a:hover {
+    color: #ffee05;
+    transform: scale(1.1);
 }
 
 main {
